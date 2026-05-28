@@ -1,0 +1,43 @@
+---
+title: "The Larger Story: Where This Volume Sits"
+volume: 2
+source: "IJH_Vol2_v5_6_1_1.docx"
+---
+
+# The Larger Story: Where This Volume Sits
+
+I am putting this chapter at the front of Vol 2 for the same reason I put What We Are Being Formed For at the front of Vol 1. Everything that follows in this volume — the diagnostic work, the Tool Map, the clearing protocols, the hearing development, the container discipline, the community amplification — can be read in two completely different ways, and the difference is decided here.
+
+## The Bible is one Story
+Jesus, on the road to Emmaus, “beginning with Moses and all the Prophets, interpreted to them in all the Scriptures the things concerning himself” (Luke 24:27, ESV). The point is structural. The Old Testament is not a collection of stories. The New Testament is not a collection of moral teachings. From Genesis to Revelation, the Bible is one Story — the Larger Story, John Eldredge and Brent Curtis named it in The Sacred Romance — that begins in the garden and ends at the wedding feast of the Lamb (Rev. 19:7–9), with the cosmos under conflict in between and the King of glory at the center of every act.
+
+The Story has the form of every Story the human heart has ever recognized as true: a beauty made, a betrayal, a long exile, a hero who comes and gives himself for the beloved, an enemy defeated, a wedding. C. S. Lewis named this in his term “the true myth” — that the deepest pattern of human storytelling is true because the cosmos is itself a Story, and the Author wrote himself into it. The Bible is not one mythological story among many. It is the Story that all the others were echoing.
+
+What this matters for Vol 2: the participant doing the work this volume describes is not first a patient receiving treatment. The participant is first a character in this Story. The wounds being cleared, the sins being confessed, the idols being dethroned, the lies being broken, the hearing being developed, the community being formed — all of this is happening inside the Larger Story, and the participant’s place in it is real.
+
+## Four moves of the Story
+The Story has four moves. Each is essential to understanding why Vol 2’s work is the kind of work it is.
+
+Creation. “In the beginning, God created the heavens and the earth” (Gen. 1:1, ESV). Everything came from love, and everything was good. Man and woman were made in God’s image (Gen. 1:27), placed in a garden, given dominion, designed for communion with God and one another. The original setting is not neutral; it is glory. Whatever the participant has experienced of beauty, longing, intimacy, vocation, friendship — these are echoes of what we were made for in the original Story.
+
+Fall. The Enemy entered the Story as a serpent in the garden (Gen. 3) and proposed a lie that the participant, in some form, has heard her whole life: God is holding out on you, the rules are restrictions on your freedom, you can be like God yourself if you take what was forbidden. Man and woman believed it, and the world broke. The ground was cursed, communion with God was severed, the woman bore children in sorrow, the man worked the ground in sweat, and death entered (Gen. 3:14–19). But in the middle of the curse, God spoke a promise to the serpent: “I will put enmity between you and the woman, and between your offspring and her offspring; he shall bruise your head, and you shall bruise his heel” (Gen. 3:15, ESV). The first promise of the Seed who would undo what was done.
+
+Redemption. The whole of the Old Testament tells the story of God preparing the world for the coming of that Seed: Abraham called out, Israel formed, the law given, the prophets sent, the kingdom established, the exile suffered, the longing maintained for the One who would come. Then the Word became flesh and dwelt among us (John 1:14). Jesus lived, taught the kingdom, healed, suffered, died on the cross to bear the curse that had broken the world, and rose on the third day. The serpent’s head was crushed at Calvary (Col. 2:15; Heb. 2:14). The Story’s deepest turn happened there — the place where what looked like the Enemy’s triumph was actually his defeat. The participant doing the work this volume describes is doing it because Christ has done that work first. Every wound that can be healed, every sin that can be forgiven, every idol that can be dethroned, every lie that can be broken — all of this is possible because of what happened on a particular Friday in a particular garden outside a particular city. This work is downstream of the cross.
+
+Consummation. The Story is not over. The Church is the Bride being prepared (Eph. 5:25–27); the Spirit is given as a deposit (Eph. 1:13–14); the Enemy is still at work, though he is a defeated foe; the participant is being formed for the coming wedding (Rev. 19:7–9), the new heaven and new earth (Rev. 21:1–4), the City where there is no more crying or pain or death. The Story is moving toward its final scene. Every disciple is in the chapter just before the final chapter, and the final chapter is glory.
+
+## What this means for the work below
+The participant doing the work this volume describes is doing it inside this Story. That changes everything operationally.
+
+The wounds the participant is clearing are real wounds done by real characters inside the war, which are the second through fourth moves of the Story. The Enemy is not a metaphor; he is the serpent of Genesis 3, the accuser of Revelation 12:10, the lion seeking whom he may devour (1 Pet. 5:8). The Cross is not a doctrinal proposition; it is the moment in the Story when the curse was actually broken. The Spirit’s work in the participant’s heart is not a therapeutic technique; it is the Spirit of the Risen Christ applying the finished work of the Cross to the specific places in the participant where the curse still has its grip.
+
+The Romance is real. The participant’s deepest longing — for beauty, for intimacy with God, for a love that does not fail, for a place she belongs — is the heart’s response to being made for the Bridegroom. The Sacred Romance, Eldredge and Curtis called it. The participant’s heart is not deceived by its longing; it is being drawn by the One who put the longing there. “He has put eternity into man’s heart” (Eccl. 3:11, ESV).
+
+The Adventure is real. The participant has a part in the Story. Eph. 2:10 (ESV): “We are his workmanship, created in Christ Jesus for good works, which God prepared beforehand, that we should walk in them.” The good works prepared beforehand are not generic moral acts; they are specific to the participant, prepared for her in the Story, and she walks in them as a particular character with a particular role. The participant’s vocation is not the application of general principles; it is the playing of a particular part in a particular act of a particular Story.
+
+The war is real. “We do not wrestle against flesh and blood, but against the rulers, against the authorities, against the cosmic powers over this present darkness, against the spiritual forces of evil in the heavenly places” (Eph. 6:12, ESV). The clearing work in this volume is also warfare work. The lies the participant is breaking, the contracts she is renouncing, the false-self verdicts she is dismantling — these are battlegrounds the Enemy has occupied, and reclaiming them is real territory taken back. This is named more fully in V2.Exp2B (the Adversary’s Role), but it should be felt as the texture of every chapter of this volume.
+
+## What this is not
+This framing is not a license for romantic exaggeration, spiritual-warfare theatricality, or therapeutic-clearing dressed up in mythic language. The Bridge from Knowing to Doing (the next chapter) names the gap between intellectual assent and lived participation that this volume exists to address — that gap is structural and real, and the work to address it has to be specific and disciplined. The Story-framing this chapter names is not a substitute for the diagnostic care, the tool discernment, the Formation Companion competency, the container discipline, the doctrinal frame on hearing, or the wound/sin distinction that the rest of Vol 2 develops. The Story-framing is the orientation that makes those disciplines what they are.
+
+Without this framing, the rest of Vol 2 reads as protocol. With it, the same content is participation in the Story — apprenticeship in the way of Christ, who is himself the protagonist of the Story the participant is in. This is the orientation Vol 2 assumes. Without it, the diagnostic and operational work below drifts into a clinical-clearing system. With it, the same work is the disciple’s role in the Larger Story.

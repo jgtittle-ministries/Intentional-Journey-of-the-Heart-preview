@@ -1,0 +1,44 @@
+---
+title: "Supplemental Exploration: The Three Desires — Design Specifications of the Human Heart"
+volume: 1
+source: "IJH_Vol1_v5_6_1_1.docx"
+---
+
+# Supplemental Exploration: The Three Desires — Design Specifications of the Human Heart
+
+## Why I Am Adding This Here
+A note on framing before I proceed: the three desires I describe here — a battle to fight, a beauty to rescue, an adventure to live — are drawn from Eldredge’s Wild at Heart and are his articulation of the masculine heart’s design. I have tested them in men’s formation work over many years and find them useful. But Eldredge’s Captivating, co-written with Stasi Eldredge, proposes a corresponding set of feminine desires that are related but distinct: to be romanced and pursued rather than to pursue; to play an irreplaceable and beautiful role in the adventure rather than to lead it; and to unveil and embody beauty rather than to rescue it. The deep structure is the same — the heart is designed, the design gets wounded, the wounds produce distortions, and healing is possible. But the specific shape of the design differs, and I do not want the daughters and granddaughters reading this to conclude that the heart-design map only applies to men. If you are a woman working through this material, I recommend reading Captivating alongside this exploration.
+
+This exploration came to me late in the drafting of Vol 1, which is part of why it appears here rather than woven into Exploration 2 on the structure of spirit, heart, soul, and body. It belongs there conceptually — it is a structural observation about what the heart was designed for — but I did not have the language for it precisely until reflecting on John Eldredge’s Wild at Heart (2001). Eldredge proposes that the masculine heart, made in the image of God, carries three core desires: a battle to fight, an adventure to live, and a beauty to rescue. When I first read that, something in me recognized it before I could argue about it. That recognition is itself a kind of evidence.
+
+I want to do something here that Eldredge does not quite do: I want to treat these desires not as psychological observations (though they are that) but as structural laws — design specifications of the heart, the way Newton’s laws are design specifications of physical motion. If they are true, they are not culturally contingent. They are features of how the heart was built, and they persist even when they are suppressed, distorted, or redirected.
+
+## The Three Desires as Structural Features
+A battle to fight. This is not a desire for violence; it is a desire for something to be at stake. Men come alive when something real requires them. The opposite — a life where nothing requires anything — is not peace; it is a kind of death that comes on quietly and is hard to name. I have watched this in retired men, in men between jobs, in men whose children are grown and whose mission has not yet been located. The energy that was going somewhere now has nowhere to go, and the man slowly deflates. This is not a character failure; it is a structural mismatch between the design and the context.
+
+An adventure to live. This is the desire to be in a story that is going somewhere — that has genuine uncertainty, genuine risk, and genuine discovery. The opposite is a managed life, where everything is under control, nothing can surprise me, and the primary goal is to prevent loss. I have lived portions of my own life in the managed mode, and looking back, those stretches produced very little of what I most value. The journey I have been on since 1982 — the one this whole series documents — has been an adventure. Not always comfortable. Frequently uncertain. But alive.
+
+A beauty to rescue. Eldredge means this more broadly than romantic love, though it includes that. It is the desire to protect and cherish something or someone irreplaceable — to be, in some specific context, the one who stands between something beautiful and the thing that threatens it. This desire connects directly to the Mission discussion in Vol 2: the mission I am called to almost always has a “beauty” component — a person, a community, a set of values, something worth protecting.
+
+***Gen. 1:26–27 (ESV)***
+
+*“Then God said, ‘Let us make man in our image, after our likeness…’ So God created man in his own image, in the image of God he created him; male and female he created them.”*
+
+If man is made in the image of God, then the desires built into the masculine heart are reflections of something in God’s own nature. God enters a battle against sin, death, and the enemy of our souls. God is writing an adventure — the vast, unfolding story of redemption, which is the most expansive narrative that exists. God pursues a beauty — the church, His people, the restoration of all things. The three desires are not personality types; they are image-bearers bearing the image.
+
+***Ps. 37:4 (ESV)***
+
+*“Delight yourself in the Lord, and he will give you the desires of your heart.”*
+
+This verse is sometimes read as a promise that God will satisfy my desires. It is also a structural statement: the desires of a heart that is genuinely delighting in the Lord will be the desires the Lord put there. The alignment is the gift. When I am genuinely oriented toward the Father, what I most want is what He designed me to want — and He is then free to fulfill it, because what I am asking for is what He already intended to give.
+
+## The Distortions
+The three desires, like every structural feature of the heart, can be suppressed or redirected but not eliminated. A man who has been taught that his warrior nature is dangerous, or that adventure is irresponsible, or that his heart’s need for beauty to pursue is self-indulgent, does not lose these desires — he reroutes them. The battle goes underground and shows up as competition with co-workers, arguments at home, or an addiction to conflict-based entertainment. The adventure becomes escapism — video games, fantasy sports, or the endless management of a perfectly maintained hobby. The desire to rescue beauty, detached from real relationship, finds whatever substitute is available.
+
+This is the design-versus-distortion pattern I use throughout Vol 1. Every spiritual law has a negative — a condition in which the law operates backward or fails to produce its intended fruit. The three desires have their negatives: suppression, distortion, and substitution. The diagnostic question is not whether these desires are present in me — they are, by design — but whether they are being expressed in the direction they were built for.
+
+**Proposed Law (Structural): The masculine heart, made in the image of God, carries three design-level desires: a battle to fight, an adventure to live, and a beauty to rescue. These are not personality variables but structural features of image-bearing humanity. They cannot be eliminated; they can only be fulfilled, suppressed, or distorted. A man whose design desires are being met in their intended direction has the structural conditions for full engagement with his Mission (Vol 2, Exp. 5). A man whose design desires are suppressed or redirected is operating below his design capacity, regardless of his behavioral compliance.**
+
+**Certainty: Reasonably Inferred.** The phenomenological observation — that men across contexts and cultures carry something like these three desires — is high confidence, supported by Eldredge’s broad readership and my own experience in men’s work. The theological grounding (image of God → specific desire structure) is a reasonable inference, but not airtight; scripture does not explicitly list these three. The law is categorized as a working hypothesis with strong experiential support. Women carry analogous design desires that form an equally real structural law — the heart designed for a different but parallel expression of the same image-bearing reality. I am less qualified to describe them, and Stasi and John Eldredge do so with both care and scriptural grounding in Captivating (2005). To my granddaughters reading this: that book is the companion exploration I cannot write for you, and it deserves the same serious attention this supplemental exploration asks of the men.
+
+**VOL 2 CONNECTION: **The three desires link directly to the Mission discussion in Vol 2, Exploration 5 (Connecting with Mission). A man who has identified his mission will almost always find that it has a battle component (something he is contending for), an adventure component (genuine uncertainty and discovery in the process), and a beauty component (something worth protecting). These are not decorative elements of mission; they are the structural conditions that make mission sustaining rather than draining. A mission that lacks one of these three over time will eventually lose its pull.

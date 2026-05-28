@@ -1,0 +1,496 @@
+// ============================================
+// Markdown parser — handles the source's actual subset
+// ============================================
+(function () {
+  'use strict';
+
+  const escapeHtml = (s) => s.replace(/[&<>"']/g, (c) => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+
+  // Inline formatting: code, bold, italic, links, images
+  function inline(text) {
+    let s = escapeHtml(text);
+    // Inline code
+    s = s.replace(/`([^`]+)`/g, (_, code) => '<code>' + code + '</code>');
+    // Images ![alt](src)
+    s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
+      const safeAlt = alt.replace(/"/g, '&quot;');
+      let resolved = src;
+      if (!/^https?:|^data:|^\//.test(src)) {
+        const ctx = window.__current_md_path || '';
+        const ctxDir = ctx.substring(0, ctx.lastIndexOf('/'));
+        if (src.startsWith('./')) src = src.slice(2);
+        resolved = ctxDir + '/' + src;
+      }
+      return '<figure class="md-figure"><img src="' + resolved + '" alt="' + safeAlt + '" loading="lazy"/>' +
+             (alt ? '<figcaption>' + escapeHtml(alt) + '</figcaption>' : '') +
+             '</figure>';
+    });
+    // Links [text](url)
+    s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, txt, url) => {
+      const safeUrl = url.replace(/"/g, '%22');
+      let href = safeUrl;
+      // Rewrite local .md links to reader.html?path=
+      if (/\.md(#|$)/.test(safeUrl) && !/^https?:/.test(safeUrl)) {
+        const ctx = window.__current_md_path || '';
+        const ctxDir = ctx.substring(0, ctx.lastIndexOf('/'));
+        let target = safeUrl;
+        // Resolve relative paths
+        if (target.startsWith('../')) {
+          const parts = ctxDir.split('/');
+          while (target.startsWith('../')) {
+            parts.pop();
+            target = target.slice(3);
+          }
+          target = parts.join('/') + '/' + target;
+        } else if (!target.startsWith('/')) {
+          target = ctxDir + '/' + target;
+        }
+        href = 'reader.html#' + encodeURIComponent(target);
+        return '<a href="' + href + '">' + txt + '</a>';
+      }
+      const ext = /^https?:/.test(safeUrl) ? ' target="_blank" rel="noopener"' : '';
+      return '<a href="' + safeUrl + '"' + ext + '>' + txt + '</a>';
+    });
+    // Bold **text** and __text__
+    s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    s = s.replace(/__([^_]+)__/g, '<strong>$1</strong>');
+    // Italic *text* and _text_ (single, not surrounded by other *)
+    s = s.replace(/(?<![*\w])\*([^*\n]+?)\*(?!\*)/g, '<em>$1</em>');
+    s = s.replace(/(?<![_\w])_([^_\n]+?)_(?!_)/g, '<em>$1</em>');
+    return s;
+  }
+
+  function parseTable(lines, start) {
+    // lines[start] is header row, lines[start+1] is separator
+    if (start + 1 >= lines.length) return null;
+    if (!/^\s*\|?[\s\-:|]+\|?\s*$/.test(lines[start + 1])) return null;
+    const splitRow = (row) => row.replace(/^\s*\|/, '').replace(/\|\s*$/, '').split('|').map(c => c.trim());
+    const header = splitRow(lines[start]);
+    let i = start + 2;
+    const rows = [];
+    while (i < lines.length && lines[i].includes('|') && lines[i].trim() !== '') {
+      rows.push(splitRow(lines[i]));
+      i++;
+    }
+    let html = '<table><thead><tr>';
+    header.forEach(h => html += '<th>' + inline(h) + '</th>');
+    html += '</tr></thead><tbody>';
+    rows.forEach(r => {
+      html += '<tr>';
+      r.forEach(c => html += '<td>' + inline(c) + '</td>');
+      html += '</tr>';
+    });
+    html += '</tbody></table>';
+    return { html, consumed: i - start };
+  }
+
+  function parseAdmonition(lines, start) {
+    const m = lines[start].match(/^!!!\s+(\w+)(?:\s+"([^"]*)")?/);
+    if (!m) return null;
+    const kind = m[1].toLowerCase();
+    const title = m[2] || kind.toUpperCase();
+    let i = start + 1;
+    const inner = [];
+    while (i < lines.length) {
+      const ln = lines[i];
+      if (ln.trim() === '') { inner.push(''); i++; continue; }
+      if (/^    /.test(ln) || /^\t/.test(ln)) {
+        inner.push(ln.replace(/^(    |\t)/, ''));
+        i++;
+      } else {
+        break;
+      }
+    }
+    // trim trailing blanks
+    while (inner.length && inner[inner.length-1] === '') inner.pop();
+    const inside = parseBlocks(inner);
+    const html = `<div class="admonition ${kind}"><div class="admonition-title">${escapeHtml(title)}</div>${inside}</div>`;
+    return { html, consumed: i - start };
+  }
+
+  function parseList(lines, start, ordered) {
+    const marker = ordered ? /^(\s*)\d+\.\s+(.*)$/ : /^(\s*)[-*+]\s+(.*)$/;
+    const items = [];
+    let i = start;
+    let baseIndent = -1;
+    while (i < lines.length) {
+      const m = lines[i].match(marker);
+      if (m) {
+        const indent = m[1].length;
+        if (baseIndent === -1) baseIndent = indent;
+        if (indent !== baseIndent) break;
+        const itemLines = [m[2]];
+        i++;
+        while (i < lines.length) {
+          if (lines[i].trim() === '') {
+            // could be paragraph continuation; peek ahead
+            const next = lines[i + 1];
+            if (next && /^\s{2,}/.test(next) && !next.match(marker)) {
+              itemLines.push('');
+              i++;
+              continue;
+            }
+            break;
+          }
+          if (lines[i].match(marker) && (lines[i].match(/^(\s*)/)[1].length === baseIndent)) break;
+          if (/^\s+/.test(lines[i])) {
+            itemLines.push(lines[i].replace(new RegExp('^\\s{' + (baseIndent + 2) + '}'), ''));
+            i++;
+          } else if (/^\s*[-*+]\s/.test(lines[i]) || /^\s*\d+\.\s/.test(lines[i])) {
+            itemLines.push(lines[i]);
+            i++;
+          } else {
+            break;
+          }
+        }
+        items.push(itemLines);
+      } else if (lines[i].trim() === '' && i + 1 < lines.length && lines[i + 1].match(marker)) {
+        i++;
+      } else {
+        break;
+      }
+    }
+    if (!items.length) return null;
+    const tag = ordered ? 'ol' : 'ul';
+    let html = '<' + tag + '>';
+    items.forEach(itemLines => {
+      // If item has multiple paragraphs (blanks inside), parse as blocks; otherwise inline
+      const hasBlock = itemLines.some(l => l === '') || itemLines.some(l => /^[-*+\d]/.test(l));
+      if (hasBlock) {
+        html += '<li>' + parseBlocks(itemLines) + '</li>';
+      } else {
+        html += '<li>' + inline(itemLines.join(' ')) + '</li>';
+      }
+    });
+    html += '</' + tag + '>';
+    return { html, consumed: i - start };
+  }
+
+  function parseBlocks(lines) {
+    let out = '';
+    let i = 0;
+    while (i < lines.length) {
+      const line = lines[i];
+      const trimmed = line.trim();
+
+      // Blank line
+      if (trimmed === '') { i++; continue; }
+
+      // HR
+      if (/^(\s*)(-{3,}|\*{3,}|_{3,})\s*$/.test(line)) {
+        out += '<hr/>';
+        i++; continue;
+      }
+
+      // Heading
+      const hm = line.match(/^(#{1,6})\s+(.+?)\s*#*\s*$/);
+      if (hm) {
+        const level = hm[1].length;
+        out += '<h' + level + '>' + inline(hm[2]) + '</h' + level + '>';
+        i++; continue;
+      }
+
+      // Code block
+      if (/^```/.test(trimmed)) {
+        const fence = trimmed.match(/^(`{3,})/)[1];
+        i++;
+        const code = [];
+        while (i < lines.length && !lines[i].startsWith(fence)) {
+          code.push(lines[i]);
+          i++;
+        }
+        out += '<pre><code>' + escapeHtml(code.join('\n')) + '</code></pre>';
+        i++; continue;
+      }
+
+      // Admonition !!! kind "title"
+      if (/^!!!\s+\w+/.test(line)) {
+        const r = parseAdmonition(lines, i);
+        if (r) { out += r.html; i += r.consumed; continue; }
+      }
+
+      // Blockquote
+      if (/^>\s?/.test(trimmed)) {
+        const quoteLines = [];
+        while (i < lines.length && (/^>/.test(lines[i].trim()) || lines[i].trim() === '')) {
+          if (lines[i].trim() === '') {
+            if (i + 1 < lines.length && /^>/.test(lines[i+1].trim())) {
+              quoteLines.push('');
+              i++;
+              continue;
+            }
+            break;
+          }
+          quoteLines.push(lines[i].replace(/^\s*>\s?/, ''));
+          i++;
+        }
+        out += '<blockquote>' + parseBlocks(quoteLines) + '</blockquote>';
+        continue;
+      }
+
+      // Table
+      if (line.includes('|') && i + 1 < lines.length && /^\s*\|?[\s\-:|]+\|?\s*$/.test(lines[i + 1])) {
+        const r = parseTable(lines, i);
+        if (r) { out += r.html; i += r.consumed; continue; }
+      }
+
+      // Lists
+      if (/^\s*[-*+]\s/.test(line)) {
+        const r = parseList(lines, i, false);
+        if (r) { out += r.html; i += r.consumed; continue; }
+      }
+      if (/^\s*\d+\.\s/.test(line)) {
+        const r = parseList(lines, i, true);
+        if (r) { out += r.html; i += r.consumed; continue; }
+      }
+
+      // Paragraph
+      const pLines = [];
+      while (i < lines.length && lines[i].trim() !== '' &&
+             !/^#{1,6}\s/.test(lines[i]) &&
+             !/^>\s?/.test(lines[i].trim()) &&
+             !/^!!!/.test(lines[i]) &&
+             !/^```/.test(lines[i].trim()) &&
+             !/^\s*[-*+]\s/.test(lines[i]) &&
+             !/^\s*\d+\.\s/.test(lines[i]) &&
+             !/^(\s*)(-{3,}|\*{3,}|_{3,})\s*$/.test(lines[i])) {
+        pLines.push(lines[i]);
+        i++;
+      }
+      if (pLines.length) {
+        out += '<p>' + inline(pLines.join(' ').trim()) + '</p>';
+      }
+    }
+    return out;
+  }
+
+  function stripFrontmatter(text) {
+    if (!text.startsWith('---')) return text;
+    const end = text.indexOf('\n---', 3);
+    if (end === -1) return text;
+    return text.slice(end + 4).replace(/^\s*\n/, '');
+  }
+
+  function renderMarkdown(text) {
+    const body = stripFrontmatter(text);
+    const lines = body.split('\n');
+    return parseBlocks(lines);
+  }
+
+  window.renderMarkdown = renderMarkdown;
+})();
+
+// ============================================
+// Reader page logic
+// ============================================
+(function () {
+  'use strict';
+
+  const params = new URLSearchParams(window.location.search);
+  let path = params.get('path');
+
+  // Also accept hash-form: reader.html#docs/...
+  if (!path && window.location.hash) {
+    path = decodeURIComponent(window.location.hash.replace(/^#/, ''));
+  }
+
+  // Default to Vol 6 index if no path
+  if (!path) path = 'docs/volume-6-governance/index.md';
+
+  window.__current_md_path = path;
+
+  const info = window.PATH_TO_INFO[path];
+  const body = document.getElementById('reader-body');
+  const foot = document.getElementById('chapter-foot');
+  const chList = document.getElementById('ch-list');
+  const sidebarTitle = document.getElementById('sidebar-title');
+  const railVol = document.getElementById('rail-vol');
+  const railSource = document.getElementById('rail-source');
+  const railLive = document.getElementById('rail-live');
+  const railProgress = document.getElementById('rail-progress');
+  const progress = document.getElementById('progress');
+  const topnavVols = document.getElementById('topnav-vols');
+
+  if (!info) {
+    body.innerHTML = '<div class="reader-error">Chapter not found in manifest: <code>' + path + '</code></div>';
+    return;
+  }
+
+  // Update page title
+  document.title = info.title + ' — IJH';
+
+  // Mark current volume in top nav
+  Array.from(topnavVols.children).forEach(a => {
+    const href = a.getAttribute('href');
+    if (href === info.volumeFile) a.classList.add('current');
+  });
+
+  // Sidebar: list this volume's chapters
+  const volData = window.VOLUME_CHAPTERS[info.volume];
+  sidebarTitle.textContent = volData.name;
+  let listHTML = '';
+  volData.chapters.forEach(ch => {
+    const isCurrent = ch.path === path ? ' class="current"' : '';
+    const href = 'reader.html#' + encodeURIComponent(ch.path);
+    listHTML += '<li><a href="' + href + '"' + isCurrent + '>' + escapeHTML(ch.title) + '</a></li>';
+  });
+  chList.innerHTML = listHTML;
+
+  // Right rail
+  railVol.textContent = volData.name;
+  railSource.textContent = path;
+  const liveBase = 'https://jgtittle-ministries.github.io/Intentional-Journey-of-the-Heart-dev/';
+  const livePath = path.replace(/^docs\//, '').replace(/\.md$/, '/').replace(/index\/$/, '');
+  railLive.href = liveBase + livePath;
+
+  // Fetch and render the markdown
+  fetch(path)
+    .then(r => {
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      return r.text();
+    })
+    .then(text => {
+      const renderedHTML = window.renderMarkdown(text);
+      const chapterMeta = `<div class="chapter-meta">
+        <span>${escapeHTML(volData.name)}</span>
+        <span>·</span>
+        <a href="${info.volumeFile}">Volume contents</a>
+      </div>`;
+      body.innerHTML = chapterMeta + renderedHTML;
+
+      // Detect long chapters and apply visual treatment
+      const h2s = body.querySelectorAll('h2');
+      const h3s = body.querySelectorAll('h3');
+      const isLong = h2s.length >= 4 || text.length > 30000;
+      if (isLong) {
+        body.classList.add('long-chapter');
+
+        // Insert chapter banner with stats
+        const wordCount = text.replace(/[\s\W_]+/g, ' ').trim().split(/\s+/).length;
+        const readMin = Math.max(1, Math.round(wordCount / 220));
+        const firstH1 = body.querySelector('h1');
+        const banner = document.createElement('div');
+        banner.className = 'chapter-banner';
+        banner.innerHTML = `
+          <div class="cb-item"><div class="cb-lbl">Sections</div><div class="cb-val accent">${h2s.length}</div></div>
+          <div class="cb-item"><div class="cb-lbl">Subsections</div><div class="cb-val">${h3s.length}</div></div>
+          <div class="cb-item"><div class="cb-lbl">Words</div><div class="cb-val">${wordCount.toLocaleString()}</div></div>
+          <div class="cb-item"><div class="cb-lbl">Reading time</div><div class="cb-val">~${readMin} min</div></div>
+        `;
+        if (firstH1) firstH1.after(banner);
+        else body.prepend(banner);
+      }
+
+      // Assign IDs to all headings for anchor linking
+      const allHeadings = body.querySelectorAll('h2, h3');
+      allHeadings.forEach((h, i) => {
+        if (!h.id) {
+          const slug = (h.textContent || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+          h.id = 'h-' + (slug || ('section-' + i));
+        }
+      });
+
+      // Build chapter outline in right rail (replaces source-info block when long)
+      const rail = document.querySelector('.right-rail');
+      if (isLong && rail && allHeadings.length >= 4) {
+        rail.innerHTML = `
+          <div class="rail-block">
+            <div class="rail-label">Reading</div>
+            <div class="rail-value" id="rail-progress">0%</div>
+          </div>
+          <div class="rail-block">
+            <div class="rail-label">In this chapter</div>
+            <nav class="chapter-outline" id="chapter-outline"></nav>
+          </div>
+        `;
+        const outline = document.getElementById('chapter-outline');
+        allHeadings.forEach(h => {
+          const link = document.createElement('a');
+          link.href = '#' + h.id;
+          link.textContent = h.textContent;
+          if (h.tagName === 'H3') link.className = 'h3';
+          link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.getElementById(h.id);
+            if (target) {
+              const top = target.getBoundingClientRect().top + window.scrollY - 70;
+              window.scrollTo({ top, behavior: 'smooth' });
+            }
+          });
+          outline.appendChild(link);
+        });
+        // Re-grab progress element after rail rewrite
+        window.__railProgress = document.getElementById('rail-progress');
+
+        // Intersection observer for active section tracking
+        const linkMap = {};
+        outline.querySelectorAll('a').forEach(a => {
+          linkMap[a.getAttribute('href').slice(1)] = a;
+        });
+        let activeId = null;
+        const setActive = (id) => {
+          if (id === activeId) return;
+          if (activeId && linkMap[activeId]) linkMap[activeId].classList.remove('active');
+          if (id && linkMap[id]) linkMap[id].classList.add('active');
+          activeId = id;
+        };
+        const updateActive = () => {
+          const triggerY = window.innerHeight * 0.25 + window.scrollY;
+          let candidate = null;
+          allHeadings.forEach(h => {
+            if (h.offsetTop <= triggerY) candidate = h.id;
+          });
+          if (candidate) setActive(candidate);
+        };
+        window.addEventListener('scroll', updateActive, { passive: true });
+        updateActive();
+      }
+
+      // Footer prev/next
+      const prevHTML = info.prev
+        ? `<a href="reader.html?path=${encodeURIComponent(info.prev)}"><span class="ar-lbl">← Previous</span><span class="ar-name">${escapeHTML(window.PATH_TO_INFO[info.prev].title)}</span></a>`
+        : `<a href="${info.volumeFile}"><span class="ar-lbl">← Back</span><span class="ar-name">${escapeHTML(volData.name)}</span></a>`;
+      const nextHTML = info.next
+        ? `<a class="next" href="reader.html?path=${encodeURIComponent(info.next)}"><span class="ar-lbl">Next →</span><span class="ar-name">${escapeHTML(window.PATH_TO_INFO[info.next].title)}</span></a>`
+        : `<div></div>`;
+      foot.innerHTML = prevHTML + nextHTML;
+
+      // Scroll to top after render
+      window.scrollTo(0, 0);
+    })
+    .catch(err => {
+      body.innerHTML = '<div class="reader-error">' +
+        'Failed to load <code>' + escapeHTML(path) + '</code><br/><br/>' +
+        'Error: ' + escapeHTML(err.message) + '<br/><br/>' +
+        '<em>Note: the reader requires the markdown files to be served over HTTP. ' +
+        'If you opened this file directly via file:// the browser will block local fetches. ' +
+        'Use the project preview, which serves files via HTTP.</em>' +
+        '</div>';
+    });
+
+  function escapeHTML(s) {
+    return String(s).replace(/[&<>"']/g, (c) => ({
+      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+    }[c]));
+  }
+
+  // Reading progress bar
+  function onScroll() {
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const scrolled = window.scrollY;
+    const pct = docHeight > 0 ? scrolled / docHeight : 0;
+    progress.style.width = (pct * 100) + '%';
+    const rp = window.__railProgress || railProgress;
+    if (rp) rp.textContent = Math.round(pct * 100) + '%';
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll);
+  onScroll();
+
+  // Reload when hash changes so sidebar/footer chapter links navigate cleanly
+  window.addEventListener('hashchange', () => {
+    window.location.reload();
+  });
+})();
