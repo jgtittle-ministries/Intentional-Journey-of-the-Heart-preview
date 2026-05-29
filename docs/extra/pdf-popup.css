@@ -1,0 +1,129 @@
+/* PDF popup link suffix — looks like a blue hyperlink with `(pdf)` label */
+a.pdf-popup {
+  margin-left: 0.35em;
+  font-size: 0.85em;
+  font-weight: 500;
+  color: #1e88e5;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+a.pdf-popup:hover,
+a.pdf-popup:focus {
+  color: #1565c0;
+  text-decoration-thickness: 2px;
+}
+/* Dark scheme — Material `slate` palette */
+[data-md-color-scheme="slate"] a.pdf-popup {
+  color: #64b5f6;
+}
+[data-md-color-scheme="slate"] a.pdf-popup:hover,
+[data-md-color-scheme="slate"] a.pdf-popup:focus {
+  color: #90caf9;
+}
+
+/* Button-style popup link — used when the popup link is the primary
+   call-to-action on a page (e.g. Vol 3 TFT appendices). Combine with
+   Material's `.md-button` / `.md-button--primary` to render as a button. */
+a.pdf-popup.md-button {
+  margin-left: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: normal;
+  display: inline-block;
+  padding: 0.625em 1.25em;
+}
+a.pdf-popup.md-button:hover,
+a.pdf-popup.md-button:focus {
+  text-decoration: none;
+}
+[data-md-color-scheme="slate"] a.pdf-popup.md-button {
+  color: inherit;
+}
+
+/* Modal container */
+#pdf-popup-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+}
+#pdf-popup-modal.is-open {
+  display: block;
+}
+.pdf-popup-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  cursor: pointer;
+}
+.pdf-popup-window {
+  position: absolute;
+  top: 6%;
+  left: 8%;
+  width: 84%;
+  height: 88%;
+  background: #ffffff;
+  border-radius: 6px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.pdf-popup-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 14px;
+  background: #1e293b;
+  color: #fff;
+  font-size: 0.95em;
+  flex: 0 0 auto;
+}
+.pdf-popup-title {
+  flex: 1 1 auto;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.pdf-popup-hint {
+  flex: 0 0 auto;
+  font-size: 0.8em;
+  font-style: italic;
+  opacity: 0.75;
+  white-space: nowrap;
+}
+@media (max-width: 600px) {
+  .pdf-popup-hint {
+    display: none;
+  }
+}
+.pdf-popup-open {
+  color: #93c5fd;
+  text-decoration: underline;
+  font-size: 0.9em;
+}
+.pdf-popup-open:hover {
+  color: #bfdbfe;
+}
+.pdf-popup-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6em;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 4px;
+}
+.pdf-popup-close:hover {
+  color: #f87171;
+}
+.pdf-popup-frame {
+  flex: 1 1 auto;
+  width: 100%;
+  border: none;
+  background: #f5f5f5;
+}

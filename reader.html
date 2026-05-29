@@ -423,6 +423,7 @@
   .chapter-banner .cb-val { color: var(--text); }
   .chapter-banner .cb-val.accent { color: var(--accent); }
 </style>
+<script>(function(){try{if(localStorage.getItem('ijh-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
 <body>
 <div class="progress" id="progress"></div>
@@ -433,7 +434,7 @@
       <span class="dot"></span>
       <span class="crest-stack">
         <span class="work">Intentional Journey of the Heart</span>
-        <span class="crest-sub">DEV PREVIEW · v5.6</span>
+        <span class="crest-sub">v5.7</span>
       </span>
     </a>
     <div class="topnav-vols" id="topnav-vols">
@@ -446,8 +447,12 @@
       <a href="Volume 5.html"><span class="v-num">V</span>References</a>
       <a href="Volume 6 Governance.html"><span class="v-num">VI</span>Governance</a>
     </div>
+    <div class="topnav-controls">
+      <button type="button" class="nav-icon-btn" id="search-open" aria-label="Search" title="Search (press /)">⌕</button>
+      <button type="button" class="nav-icon-btn" id="theme-toggle" aria-label="Toggle dark mode"></button>
+    </div>
     <div class="topnav-right">
-      <a href="https://github.com/jgtittle-ministries/Intentional-Journey-of-the-Heart-dev" target="_blank" rel="noopener">Repo</a>
+      <a href="https://github.com/jgtittle-ministries/Intentional-Journey-of-the-Heart-preview" target="_blank" rel="noopener">Repo</a>
       <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
     </div>
   </nav>
@@ -481,14 +486,11 @@
       <div class="rail-label">Source</div>
       <div class="rail-value" id="rail-source" style="word-break: break-all;">—</div>
     </div>
-    <div class="rail-block">
-      <div class="rail-label">Live site</div>
-      <div class="rail-value"><a id="rail-live" href="#" target="_blank" rel="noopener" style="color: var(--accent); text-decoration: none;">Open ↗</a></div>
-    </div>
   </aside>
 </div>
 
 <script src="manifest.js"></script>
 <script src="reader.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

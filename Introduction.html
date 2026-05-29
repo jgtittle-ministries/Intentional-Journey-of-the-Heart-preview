@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;1,8..60,400;1,8..60,500&family=JetBrains+Mono:wght@400;500;600&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<script>(function(){try{if(localStorage.getItem('ijh-theme')==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
 </head>
 <body>
 <header class="topnav-wrap">
@@ -16,7 +17,7 @@
       <span class="dot"></span>
       <span class="crest-stack">
         <span class="work">Intentional Journey of the Heart</span>
-        <span class="crest-sub">DEV PREVIEW · v5.6</span>
+        <span class="crest-sub">v5.7</span>
       </span>
     </a>
     <div class="topnav-vols">
@@ -29,8 +30,12 @@
       <a href="Volume 5.html"><span class="v-num">V</span>References</a>
       <a href="Volume 6 Governance.html"><span class="v-num">VI</span>Governance</a>
     </div>
+    <div class="topnav-controls">
+      <button type="button" class="nav-icon-btn" id="search-open" aria-label="Search" title="Search (press /)">⌕</button>
+      <button type="button" class="nav-icon-btn" id="theme-toggle" aria-label="Toggle dark mode"></button>
+    </div>
     <div class="topnav-right">
-      <a href="https://github.com/jgtittle-ministries/Intentional-Journey-of-the-Heart-dev" target="_blank" rel="noopener">Repo</a>
+      <a href="https://github.com/jgtittle-ministries/Intentional-Journey-of-the-Heart-preview" target="_blank" rel="noopener">Repo</a>
       <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>
     </div>
   </nav>
@@ -44,7 +49,7 @@
     <p class="subtitle">Not identical to physics — but equally orderly, equally real, and equally open to investigation by someone willing to pay attention.</p>
 
     <div class="meta-row">
-      <div class="meta-item"><span class="lbl">Source</span><span class="val">IJH_Intro_v5_6_1_1</span></div>
+      <div class="meta-item"><span class="lbl">Source</span><span class="val">IJH_Intro_v5_7_1_1</span></div>
       <div class="meta-item"><span class="lbl">My starting question</span><span class="val">What if the world of the Spirit is just as logical and discoverable as the laws of physics?</span></div>
       <div class="meta-item"><span class="lbl">Position</span><span class="val">Front matter to all six volumes</span></div>
     </div>
@@ -252,5 +257,6 @@
 
 </div>
 
+<script src="app.js"></script>
 </body>
 </html>

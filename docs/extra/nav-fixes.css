@@ -1,0 +1,20 @@
+/* nav-fixes.css
+ * Safety net for the top-level tab bar.
+ *
+ * Even with the short "Vol N: <one word>" labels, narrow viewports
+ * (phones in landscape, side-by-side laptop windows, etc.) can still
+ * push the rightmost tab off the visible area. Material's default
+ * .md-tabs__list clips overflow; this lets it scroll horizontally
+ * instead so no tab is ever unreachable.
+ */
+.md-tabs__list {
+  overflow-x: auto;
+  scrollbar-width: thin;
+}
+
+.md-tabs__list::-webkit-scrollbar {
+  height: 2px;
+}
+.md-tabs__list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.4);
+}

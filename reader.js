@@ -13,45 +13,46 @@
     let s = escapeHtml(text);
     // Inline code
     s = s.replace(/`([^`]+)`/g, (_, code) => '<code>' + code + '</code>');
-    // Images ![alt](src)
-    s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, (_, alt, src) => {
+    // Shared: resolve a relative path against the current chapter's docs/ dir.
+    function resolvePath(u) {
+      if (/^https?:|^data:|^\//.test(u)) return u;
+      const ctx = window.__current_md_path || '';
+      const parts = ctx.substring(0, ctx.lastIndexOf('/')).split('/');
+      let t = u;
+      if (t.startsWith('./')) t = t.slice(2);
+      while (t.startsWith('../')) { parts.pop(); t = t.slice(3); }
+      return (parts.length ? parts.join('/') + '/' : '') + t;
+    }
+    // Images ![alt](src) — a trailing {: …} attr-list, if any, is dropped.
+    s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)(?:\{:[^}]*\})?/g, (_, alt, src) => {
       const safeAlt = alt.replace(/"/g, '&quot;');
-      let resolved = src;
-      if (!/^https?:|^data:|^\//.test(src)) {
-        const ctx = window.__current_md_path || '';
-        const ctxDir = ctx.substring(0, ctx.lastIndexOf('/'));
-        if (src.startsWith('./')) src = src.slice(2);
-        resolved = ctxDir + '/' + src;
-      }
+      const resolved = resolvePath(src);
       return '<figure class="md-figure"><img src="' + resolved + '" alt="' + safeAlt + '" loading="lazy"/>' +
              (alt ? '<figcaption>' + escapeHtml(alt) + '</figcaption>' : '') +
              '</figure>';
     });
-    // Links [text](url)
-    s = s.replace(/\[([^\]]+)\]\(([^)]+)\)/g, (_, txt, url) => {
+    // Links [text](url) with an optional {: …} attr-list (MkDocs attr_list,
+    // used by the PDF-popup links). .md links open in the reader; PDFs and
+    // other files get their relative path resolved and any classes/
+    // data-pdf-label carried through so the popup handler can pick them up.
+    s = s.replace(/\[([^\]]+)\]\(([^)]+)\)(?:\{:\s*([^}]*?)\s*\})?/g, (_, txt, url, attrs) => {
       const safeUrl = url.replace(/"/g, '%22');
-      let href = safeUrl;
-      // Rewrite local .md links to reader.html?path=
       if (/\.md(#|$)/.test(safeUrl) && !/^https?:/.test(safeUrl)) {
-        const ctx = window.__current_md_path || '';
-        const ctxDir = ctx.substring(0, ctx.lastIndexOf('/'));
-        let target = safeUrl;
-        // Resolve relative paths
-        if (target.startsWith('../')) {
-          const parts = ctxDir.split('/');
-          while (target.startsWith('../')) {
-            parts.pop();
-            target = target.slice(3);
-          }
-          target = parts.join('/') + '/' + target;
-        } else if (!target.startsWith('/')) {
-          target = ctxDir + '/' + target;
-        }
-        href = 'reader.html#' + encodeURIComponent(target);
-        return '<a href="' + href + '">' + txt + '</a>';
+        return '<a href="reader.html#' + encodeURIComponent(resolvePath(safeUrl)) + '">' + txt + '</a>';
       }
+      let cls = [], label = '';
+      if (attrs) {
+        (attrs.match(/\.[A-Za-z0-9_-]+/g) || []).forEach(c => cls.push(c.slice(1)));
+        // escapeHtml has already run, so the quotes are &quot; here.
+        const m = attrs.match(/data-pdf-label\s*=\s*(?:"|&quot;)([\s\S]*?)(?:"|&quot;)/);
+        if (m) label = m[1];
+      }
+      const resolved = resolvePath(safeUrl);
+      let attrStr = '';
+      if (cls.length) attrStr += ' class="' + cls.join(' ') + '"';
+      if (label) attrStr += ' data-pdf-label="' + label.replace(/"/g, '&quot;') + '"';
       const ext = /^https?:/.test(safeUrl) ? ' target="_blank" rel="noopener"' : '';
-      return '<a href="' + safeUrl + '"' + ext + '>' + txt + '</a>';
+      return '<a href="' + resolved + '"' + attrStr + ext + '>' + txt + '</a>';
     });
     // Bold **text** and __text__
     s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
@@ -308,7 +309,6 @@
   const sidebarTitle = document.getElementById('sidebar-title');
   const railVol = document.getElementById('rail-vol');
   const railSource = document.getElementById('rail-source');
-  const railLive = document.getElementById('rail-live');
   const railProgress = document.getElementById('rail-progress');
   const progress = document.getElementById('progress');
   const topnavVols = document.getElementById('topnav-vols');
@@ -341,9 +341,6 @@
   // Right rail
   railVol.textContent = volData.name;
   railSource.textContent = path;
-  const liveBase = 'https://jgtittle-ministries.github.io/Intentional-Journey-of-the-Heart-dev/';
-  const livePath = path.replace(/^docs\//, '').replace(/\.md$/, '/').replace(/index\/$/, '');
-  railLive.href = liveBase + livePath;
 
   // Fetch and render the markdown
   fetch(path)
@@ -492,5 +489,60 @@
   // Reload when hash changes so sidebar/footer chapter links navigate cleanly
   window.addEventListener('hashchange', () => {
     window.location.reload();
+  });
+
+  // ── PDF popup modal ────────────────────────────────────────────────
+  // Links rendered with class `pdf-popup` open the PDF in an overlay
+  // iframe (the browser's native viewer). Close via ×, backdrop, or Esc.
+  // Click handling is delegated, so it survives chapter re-renders.
+  function pdfEnsureModal() {
+    if (document.getElementById('pdf-popup-modal')) return;
+    const modal = document.createElement('div');
+    modal.id = 'pdf-popup-modal';
+    modal.setAttribute('aria-hidden', 'true');
+    modal.innerHTML =
+      '<div class="pdf-popup-backdrop" title="Click to close"></div>' +
+      '<div class="pdf-popup-window" role="dialog" aria-modal="true" aria-label="PDF document">' +
+        '<div class="pdf-popup-bar">' +
+          '<span class="pdf-popup-title"></span>' +
+          '<span class="pdf-popup-hint">Click outside or press Esc to close</span>' +
+          '<a class="pdf-popup-open" href="#" target="_blank" rel="noopener">Open in new tab ↗</a>' +
+          '<button class="pdf-popup-close" aria-label="Close" type="button">×</button>' +
+        '</div>' +
+        '<iframe class="pdf-popup-frame" src="" title="PDF document"></iframe>' +
+      '</div>';
+    document.body.appendChild(modal);
+    modal.querySelector('.pdf-popup-close').addEventListener('click', pdfCloseModal);
+    modal.querySelector('.pdf-popup-backdrop').addEventListener('click', pdfCloseModal);
+  }
+  function pdfOpenModal(href, label) {
+    pdfEnsureModal();
+    const modal = document.getElementById('pdf-popup-modal');
+    // Open at 100% zoom — browsers default to a too-small "fit width".
+    const sep = href.includes('#') ? '&' : '#';
+    modal.querySelector('.pdf-popup-frame').src = href + sep + 'zoom=100';
+    modal.querySelector('.pdf-popup-open').href = href;
+    modal.querySelector('.pdf-popup-title').textContent = label || '';
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function pdfCloseModal() {
+    const modal = document.getElementById('pdf-popup-modal');
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    modal.querySelector('.pdf-popup-frame').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest && e.target.closest('a.pdf-popup');
+    if (!link) return;
+    e.preventDefault();
+    pdfOpenModal(link.href, link.getAttribute('data-pdf-label') || '');
+  });
+  document.addEventListener('keydown', (e) => {
+    const modal = document.getElementById('pdf-popup-modal');
+    if (e.key === 'Escape' && modal && modal.classList.contains('is-open')) pdfCloseModal();
   });
 })();

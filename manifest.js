@@ -69,6 +69,10 @@ window.VOLUME_CHAPTERS = {
         "title": "Foundational Laws: Forty-Five Operational Laws of Wide Consent"
       },
       {
+        "path": "docs/volume-1-laws-of-the-spirit/supplemental-held-tensions-and-shadow-pairs.md",
+        "title": "Supplemental: Reading the Laws as Held Tensions"
+      },
+      {
         "path": "docs/volume-1-laws-of-the-spirit/foundational-law-i-the-sowing-and-reaping.md",
         "title": "Foundational Law I: The Sowing-and-Reaping Law"
       },
@@ -641,6 +645,10 @@ window.VOLUME_CHAPTERS = {
         "title": "The Periodic Table of Spiritual Laws — A Summing and Organizing Reference"
       },
       {
+        "path": "docs/volume-5-references/corporate-person-structure-scriptural-definition.md",
+        "title": "The Corporate Person-Structure: A Scriptural Definition"
+      },
+      {
         "path": "docs/volume-5-references/measuring-spiritual-formation-at-scale.md",
         "title": "Measuring Spiritual Formation at Scale"
       }
@@ -802,6 +810,15 @@ window.PATH_TO_INFO = {
     "folder": "volume-1-laws-of-the-spirit",
     "title": "Foundational Laws: Forty-Five Operational Laws of Wide Consent",
     "prev": "docs/volume-1-laws-of-the-spirit/opening-miracle-frame.md",
+    "next": "docs/volume-1-laws-of-the-spirit/supplemental-held-tensions-and-shadow-pairs.md"
+  },
+  "docs/volume-1-laws-of-the-spirit/supplemental-held-tensions-and-shadow-pairs.md": {
+    "volume": 1,
+    "volumeName": "Volume 1: Laws of the Spirit",
+    "volumeFile": "Volume 1.html",
+    "folder": "volume-1-laws-of-the-spirit",
+    "title": "Supplemental: Reading the Laws as Held Tensions",
+    "prev": "docs/volume-1-laws-of-the-spirit/foundational-laws-thirty-eight-operational-laws-of-wide.md",
     "next": "docs/volume-1-laws-of-the-spirit/foundational-law-i-the-sowing-and-reaping.md"
   },
   "docs/volume-1-laws-of-the-spirit/foundational-law-i-the-sowing-and-reaping.md": {
@@ -810,7 +827,7 @@ window.PATH_TO_INFO = {
     "volumeFile": "Volume 1.html",
     "folder": "volume-1-laws-of-the-spirit",
     "title": "Foundational Law I: The Sowing-and-Reaping Law",
-    "prev": "docs/volume-1-laws-of-the-spirit/foundational-laws-thirty-eight-operational-laws-of-wide.md",
+    "prev": "docs/volume-1-laws-of-the-spirit/supplemental-held-tensions-and-shadow-pairs.md",
     "next": "docs/volume-1-laws-of-the-spirit/foundational-law-ii-the-confession-restoration-law.md"
   },
   "docs/volume-1-laws-of-the-spirit/foundational-law-ii-the-confession-restoration-law.md": {
@@ -2026,6 +2043,15 @@ window.PATH_TO_INFO = {
     "folder": "volume-5-references",
     "title": "The Periodic Table of Spiritual Laws — A Summing and Organizing Reference",
     "prev": "docs/volume-5-references/b15-pull-out-work.md",
+    "next": "docs/volume-5-references/corporate-person-structure-scriptural-definition.md"
+  },
+  "docs/volume-5-references/corporate-person-structure-scriptural-definition.md": {
+    "volume": 5,
+    "volumeName": "Volume 5: References",
+    "volumeFile": "Volume 5.html",
+    "folder": "volume-5-references",
+    "title": "The Corporate Person-Structure: A Scriptural Definition",
+    "prev": "docs/volume-5-references/periodic-table-of-spiritual-laws-a-summing.md",
     "next": "docs/volume-5-references/measuring-spiritual-formation-at-scale.md"
   },
   "docs/volume-5-references/measuring-spiritual-formation-at-scale.md": {
@@ -2034,7 +2060,7 @@ window.PATH_TO_INFO = {
     "volumeFile": "Volume 5.html",
     "folder": "volume-5-references",
     "title": "Measuring Spiritual Formation at Scale",
-    "prev": "docs/volume-5-references/periodic-table-of-spiritual-laws-a-summing.md",
+    "prev": "docs/volume-5-references/corporate-person-structure-scriptural-definition.md",
     "next": "docs/volume-6-governance/index.md"
   },
   "docs/volume-6-governance/index.md": {
