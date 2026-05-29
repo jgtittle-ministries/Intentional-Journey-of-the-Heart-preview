@@ -9,6 +9,8 @@ source: "IJH_Vol2_v5_6_1_1.docx"
 ## Why the Map Matters
 I have a long list of tools and processes that I have found effective in various contexts. The list includes GRH, TPM, Inner Healing in the Payne/Bennett tradition, shadow work, voice dialogue, psychodrama, the Wild at Heart materials, Warrior Monk processes, and more. The list is not the problem. The problem is that without a map showing which tool addresses which blockage type, I end up applying tools at random — and a well-intentioned but wrong tool can make things worse. GRH and TPM have explicit mappings of tools, which are helpful. What follows is my mapping as I have used the tools.
 
+![A craftsman's tool cabinet — the right tool, used on the right material, at the right time.](images/07-tool-bench.jpg)
+
 The diagnostic framework from Part I gives us the map. Here is how I currently understand the tool-to-blockage correspondence:
 
 ## For Grief Knots: Naming and Completing

@@ -10,6 +10,8 @@ source: "IJH_Vol4_v5_6_0_1.docx"
 
 When I think back to what made the original Laws of the Spirit workshop actually work, it was not primarily the questions we were asking, as good as some of them were. It was the four of us in the room together, week after week, refusing to let each other get away with vague spiritual generalities. Tom would push back on a principle with a counter-example from his own experience. Larry would bring a scripture that complicated what we thought we had settled the week before. John would ask the uncomfortable practical question — so what does that mean you are going to do differently on Monday morning? That kind of friction, sustained over time, produced discernment that none of us could have arrived at alone.
 
+![A handful of people in a circle — the actual unit of small-group formation, not its abstraction.](images/10-small-group.jpg)
+
 The small group is not a delivery mechanism for the Laws of the Spirit. It is the primary testing environment. Individual formation happens in the context of community, is confirmed by it, and is often triggered by its dynamics. The PROAPT model's final step — Tell — is not an afterthought; it is the completion of the formation loop. Faith comes from hearing (Romans 10:17), and the small group is where much of that hearing happens: hearing the word, hearing each other's responses to the word, hearing what the Spirit is saying to this particular community in this particular moment.
 
 !!! info "Vol 2 connection — Session Liturgy (V2.Exp8B)"

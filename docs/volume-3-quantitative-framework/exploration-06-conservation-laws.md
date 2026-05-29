@@ -9,6 +9,8 @@ source: "IJH_Vol3_v5_6_1_1.docx"
 ## Why Conservation Laws Matter
 In mature physical theory, conservation laws are among the most powerful and useful results. They tell you what cannot change, which constrains enormously what can change, which makes prediction possible. Conservation of energy, momentum, charge, and baryon number — each of these puts a hard constraint on physical processes and eliminates whole classes of impossible outcomes without calculating the details.
 
+![A Newton's cradle — momentum passes straight through the line; nothing in the system is lost, only transferred.](images/08-newtons-cradle.jpg)
+
 Emmy Noether’s theorem establishes that every conservation law corresponds to a symmetry of the underlying Lagrangian: if the system’s behavior is unchanged under some transformation (translation in time, rotation in space, phase shift), then some quantity is conserved. If TFT’s Lagrangian has symmetries, it has conservation laws. The question is: which symmetries does it have, and what are the corresponding conserved quantities?
 
 I hold the following section at lower certainty than anything else in this volume. I am doing what the Vol 3 project is supposed to do at the frontier: identifying the shape of the question, proposing candidate answers, and being honest about which are hypotheses and which have scriptural grounding.

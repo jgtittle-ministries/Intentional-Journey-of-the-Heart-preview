@@ -9,6 +9,10 @@ source: "IJH_Vol2_v5_6_1_1.docx"
 ## A Distinction the Volume Has Always Operated On
 The Heart Soil diagnostic in Exploration 1 names *that* something is blocking growth in a given region of the heart; it does not name *what kind* of blockage it is. The corpus has been operating on a structural distinction between two categories of blockage for as long as I have been writing this volume, but I have never stated the distinction in a single place. This Exploration does.
 
+![A fractured bowl mended in gold](images/05a-kintsugi-bowl.jpg)
+
+![An ink stain bleeding into paper — two kinds of brokenness, two different responses.](images/05b-ink-stain.jpg)
+
 The two categories are **wounds** and **sin**. A wound is what was *done to* the person — suffered, often pre-volitional, often inflicted before the person had agency to refuse it, calling for healing and the Spirit's truth-encounter. A sin is what the person *has done* — owned, volitional, calling for confession and where applicable restoration. The two categories require different pastoral responses, route to different tool families, and carry different theological weight. The diagnostic discernment of which category a given blockage falls into is a Companion competency — and conflating the two miscarries the response in either direction.
 
 When a wound is misdiagnosed as a sin, the participant is sent to confession for what was done to them, which compounds shame and forecloses on the healing the wound actually needs. When a sin is misdiagnosed as a wound, the participant is offered healing for what they did, which forecloses on the confession the sin actually requires. Either error leaves the participant worse off than no intervention at all. The diagnostic question — *is this primarily wound or primarily sin?* — is therefore not a refinement detail; it is structurally upstream of the tool selection in Exploration 6.

@@ -23,12 +23,19 @@
       while (t.startsWith('../')) { parts.pop(); t = t.slice(3); }
       return (parts.length ? parts.join('/') + '/' : '') + t;
     }
-    // Images ![alt](src) — a trailing {: …} attr-list, if any, is dropped.
-    s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)(?:\{:[^}]*\})?/g, (_, alt, src) => {
+    // Images ![alt](src) with an optional {: …} attr-list. Any .classes in
+    // the attr-list are added to the figure (e.g. {: .inset-left} for a small
+    // float-left figure); default with no attr-list is the full-width figure.
+    s = s.replace(/!\[([^\]]*)\]\(([^)]+)\)(?:\{:\s*([^}]*?)\s*\})?/g, (_, alt, src, attrs) => {
       const safeAlt = alt.replace(/"/g, '&quot;');
       const resolved = resolvePath(src);
-      return '<figure class="md-figure"><img src="' + resolved + '" alt="' + safeAlt + '" loading="lazy"/>' +
-             (alt ? '<figcaption>' + escapeHtml(alt) + '</figcaption>' : '') +
+      let cls = 'md-figure';
+      if (attrs) { const m = attrs.match(/\.[A-Za-z0-9_-]+/g); if (m) cls += ' ' + m.map(c => c.slice(1)).join(' '); }
+      // `alt` is already HTML-escaped (inline() escapes the whole string up
+      // front), so it is safe to drop straight into the figcaption — escaping
+      // again here would double-encode apostrophes/ampersands in captions.
+      return '<figure class="' + cls + '"><img src="' + resolved + '" alt="' + safeAlt + '" loading="lazy"/>' +
+             (alt ? '<figcaption>' + alt + '</figcaption>' : '') +
              '</figure>';
     });
     // Links [text](url) with an optional {: …} attr-list (MkDocs attr_list,

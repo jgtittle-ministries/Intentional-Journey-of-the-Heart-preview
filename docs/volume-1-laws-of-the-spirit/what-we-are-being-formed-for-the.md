@@ -8,6 +8,8 @@ source: "IJH_Vol1_v5_6_1_1.docx"
 
 I am putting this chapter at the front of the volume because everything that follows can be read in two completely different ways, and the difference is decided here.
 
+![Hands kneading bread on a kitchen table — formation happens in ordinary work, not above it.](images/01-bread-kneading.jpg)
+
 ## The kingdom is present-tense
 Jesus’s first preaching in the synoptic gospels is about the kingdom. Mark records it: “The time is fulfilled, and the kingdom of God is at hand; repent and believe in the gospel” (Mark 1:15, ESV). Matthew gives the same opening words: “From that time Jesus began to preach, saying, ‘Repent, for the kingdom of heaven is at hand’” (Matt. 4:17, ESV). The kingdom is announced as something at hand — present, breaking in, near enough that the right human response is repentance, which is to say the turn of the heart toward what is actually here.
 

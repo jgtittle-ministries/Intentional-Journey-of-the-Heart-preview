@@ -14,6 +14,8 @@
 
 If you are reading this, it is probably because someone has asked whether you would consider serving on the Council for the Intentional Journey of the Heart. You may have already said yes, be thinking about it, or be reading this to figure out what is being asked before you answer. This document covers all three of those and is probably most useful for the last one.
 
+![A common table set simply — the Benedictine pattern the Council inherits: governance embedded in shared life.](images/11-common-table.jpg)
+
 I want to be direct about what is going on here, because the thing being asked is unusual, and I would rather you see it plainly than back into it. The Council is not an editorial board, a board of directors, an advisory committee, or any of the other things the word *council* usually calls to mind. The Council is a Fellowship of the Heart — a small group of believers walking the Four Connects together, doing their own formation work on the same material they steward. Its first job is its own formation. Its second job, which flows from the first, is stewardship of the work.
 
 That is a strange thing to ask someone to be part of. Most governing bodies ask their members to set their own interests aside and act in the interests of the body under discussion. The Council asks the opposite. The Council asks its members to bring their formation to the table, to let the work continue to form them, and to let the evidence of their own ongoing formation be part of what qualifies them to steward the work. The Council is, in that sense, the most visible demonstration that the framework actually produces what it claims to produce. If it does not produce a group of people who can function as a mature Fellowship of the Heart, the framework has a problem. And if it does, then the Council being itself a FotH is not a metaphor; it is the point.
@@ -206,6 +208,8 @@ If the Council is what I hope it will be, then the day the Council releases itse
 ---
 
 ## A Rule of Life for the Council
+
+![A folio of Benedict's Rule — short, memorable, read aloud at the start of each gathering.](images/12-benedict-rule-folio.jpg)
 
 What follows is a draft Rule of Life for the Council. It is meant to be short enough to read aloud at the beginning of each Council gathering. It is meant to be memorizable. It is meant to be the Council's common language for what it is about. I offer it as a starting point; the first Council is invited — expected, really — to modify, expand, or replace it as actual practice clarifies what the Rule should be.
 

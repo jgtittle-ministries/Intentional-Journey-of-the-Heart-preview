@@ -7,6 +7,8 @@ source: "IJH_Vol1_v5_6_1_1.docx"
 # Seventh Exploration: Spiritual Authority — The Force Multiplier
 
 
+![An oak's root system — authority is what holds you, not what subdues you.](images/04-tree-roots-rock.jpg)
+
 ![](images/image-001.png)
 
 ## The Discovery That Changes the Equations

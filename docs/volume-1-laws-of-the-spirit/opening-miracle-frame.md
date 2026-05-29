@@ -7,6 +7,8 @@ source: "IJH_Vol1_v5_6_1_1.docx"
 # Opening Exploration: The Miracle Frame — The Natural World as a Subset
 
 
+![Wheat at twilight under early stars — the natural world as a smaller system inside a larger one.](images/02-wheat-field-stars.jpg)
+
 ![](images/image-011.png)
 
 ## Why This Has to Come First

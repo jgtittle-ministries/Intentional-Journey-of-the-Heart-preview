@@ -1398,6 +1398,22 @@ hr.divider {
   line-height: 1.55;
   text-align: center;
 }
+/* Small float-left inset figure — shows a low-resolution image at (near)
+   native size with text wrapping, instead of upscaling it to full width.
+   Scoped under .reader-prose so it out-specifies the reader's inline
+   ".reader-prose .md-figure { margin: 40px -16px }" rule (same class count,
+   but that one loads later); without this the negative side margins win and
+   text crowds the image. */
+.reader-prose .md-figure.inset-left {
+  float: left;
+  width: 275px;
+  max-width: 42%;
+  margin: 6px 28px 16px 0;
+}
+.reader-prose .md-figure.inset-left figcaption { text-align: left; }
+@media (max-width: 640px) {
+  .reader-prose .md-figure.inset-left { float: none; width: 275px; max-width: 100%; margin: 28px auto; }
+}
 
 /* ── PDF popup links + modal (restored after MkDocs retirement) ────── */
 /* Inline suffix style, e.g. the "(pdf)" after a Formation Document name. */
