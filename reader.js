@@ -282,9 +282,13 @@
   }
 
   function renderMarkdown(text) {
-    const body = stripFrontmatter(text);
-    const lines = body.split('\n');
-    return parseBlocks(lines);
+    // Normalize CRLF/CR → LF first. IJH's docs/*.md are currently LF, but a
+    // future docx→md import on Windows would use CRLF; several block regexes
+    // end in `(.*)$`, which a trailing \r defeats (`.` won't eat \r, `$` won't
+    // match before it) — that makes list markers fail to parse and the block
+    // dispatch loop spin without advancing (an infinite "Loading…" hang).
+    const norm = stripFrontmatter(text).replace(/\r\n?/g, '\n');
+    return parseBlocks(norm.split('\n'));
   }
 
   window.renderMarkdown = renderMarkdown;
