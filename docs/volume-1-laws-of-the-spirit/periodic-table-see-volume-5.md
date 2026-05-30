@@ -7,7 +7,7 @@ source: "IJH_Vol1_v5_6_1_1.docx"
 # The Periodic Table — See Volume 5
 
 
-![](images/image-010.png)
+![](images/periodic-table-elements.png)
 
 The Periodic Table of Spiritual Laws was drafted as this volume’s closing chapter through five iterations and is now consolidated in Volume 5 — Heart Formation Training — alongside the Tool Inventory and the Formation Companion chapters, so that the table serves as a comprehensive reference for the whole corpus rather than the closing argument of a single volume. Volume 5 holds the synced version: the table organizes every analyzed law (47 entries at the current revision, including the 38 Foundational Laws of wide consent established in this volume) by two axes — Period 0–5 for scale of operation, Group I–VI for dimension of the person primarily addressed — with directionality tags (V/H/B/I) and the Mirror field this volume earned through its analytical work.
 
