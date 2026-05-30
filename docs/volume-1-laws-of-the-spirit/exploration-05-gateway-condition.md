@@ -7,9 +7,7 @@ source: "IJH_Vol1_v5_6_1_1.docx"
 # Fifth Exploration: The Gateway Condition — The Fear of the Lord
 
 
-![](images/image-005.jpeg)
-
-![The fear of the Lord is a gateway.](images/03-stone-arch-gateway.jpg)
+![](images/image-005.jpeg){: .fig-pair}![The fear of the Lord is a gateway.](images/03-stone-arch-gateway.jpg){: .fig-pair}
 
 ## Why This Is Its Own Exploration
 I could have included this as a subsection of the Fourth Exploration, but the more I sat with it, the more I realized the Fear of the Lord deserves its own treatment. It is not just a preamble to Wisdom — it is the starting condition for an entire epistemological orientation. It changes how I know things, not just what I know. That puts it in a different category from the other elements of the Wisdom cluster. It is the switch that either opens or closes the circuit.

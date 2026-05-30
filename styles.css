@@ -1560,3 +1560,20 @@ a.pdf-popup.md-button:focus { background: var(--accent); color: var(--bg); text-
 .sh-snip { display: block; font-size: 13.5px; color: var(--text-mid); line-height: 1.5; margin-top: 3px; max-height: 3em; overflow: hidden; }
 .search-hit mark { background: var(--accent-dim); color: var(--text); border-radius: 2px; padding: 0 1px; }
 @media (max-width: 600px) { .search-panel { top: 0; left: 0; transform: none; width: 100vw; max-height: 100vh; height: 100%; border-radius: 0; } }
+
+/* ── Side-by-side image pair (top→left, bottom→right) ────────────────
+   Tag two consecutive images with {: .fig-pair} to render them as a
+   balanced side-by-side pair instead of stacked; falls back to stacked
+   on narrow screens. Out-specifies the base .reader-prose .md-figure. */
+.reader-prose .md-figure.fig-pair {
+  display: inline-block;
+  width: 48%;
+  margin: 40px 0;
+  vertical-align: top;
+}
+.reader-prose .md-figure.fig-pair + .md-figure.fig-pair { margin-left: 3%; }
+@media (max-width: 640px) {
+  .reader-prose .md-figure.fig-pair { display: block; width: 100%; margin: 28px 0; }
+  .reader-prose .md-figure.fig-pair + .md-figure.fig-pair { margin-left: 0; }
+}
+

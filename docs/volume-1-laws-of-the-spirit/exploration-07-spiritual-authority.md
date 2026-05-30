@@ -7,9 +7,7 @@ source: "IJH_Vol1_v5_6_1_1.docx"
 # Seventh Exploration: Spiritual Authority — The Force Multiplier
 
 
-![An oak's root system — authority is what holds you, not what subdues you.](images/04-tree-roots-rock.jpg)
-
-![](images/image-001.png)
+![An oak's root system — authority is what holds you, not what subdues you.](images/04-tree-roots-rock.jpg){: .fig-pair}![](images/image-001.png){: .fig-pair}
 
 ## The Discovery That Changes the Equations
 Here is something I have had sitting in my notes for years without elevating it to the status of a law. It deserves that status. The discovery is that operating within properly delegated spiritual authority is not just the right thing to do — it amplifies the spiritual force available. Authority is a force multiplier in the spiritual dynamics.
