@@ -7,7 +7,7 @@ source: "IJH_Vol3_v5_6_1_1.docx"
 # First Exploration: The Case for Quantification
 
 
-![](images/image-009.jpeg)
+![](images/image-009.jpeg){: .inset-left}
 
 ## The Original Vision and Its Source
 The seed of this entire volume set was made public for the first time in January 2003, when Amanda wrote the Heartbeat article that introduced the IJH project to the Christ the Redeemer Church community. The vision she described — that the spiritual world should be as orderly and knowable as the physical world that the same God created — has been the basis for everything since. But the ambition of Vol 3 goes further: not just that the laws are knowable qualitatively, but that they can be expressed in forms precise enough to make specific predictions that can be tested.

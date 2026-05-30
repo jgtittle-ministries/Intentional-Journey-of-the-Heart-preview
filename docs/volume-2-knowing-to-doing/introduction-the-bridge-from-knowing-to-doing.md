@@ -18,7 +18,7 @@ I want to add one dimension to this framing that Eldredge consistently presses a
 
 Volume 2 is about getting the pipe clear and keeping it that way.
 
-![](images/image-014.jpeg)
+![](images/image-014.jpeg){: .inset-left}
 
 This is organized into three parts. Part I is diagnostic — what are the conditions that block hearing and faith? Part II is therapeutic — what tools, processes, and encounters with the Holy Spirit clear those blockages? Part III is developmental — what practices and community structures sustain and deepen the channel once it has been cleared?
 

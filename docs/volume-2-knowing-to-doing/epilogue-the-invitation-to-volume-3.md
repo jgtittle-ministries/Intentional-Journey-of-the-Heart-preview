@@ -23,4 +23,4 @@ Volume 3 is further up and further in. I will meet you there.
 
 *Blessings — Daddy and Granddaddy*
 
-![](images/image-003.jpeg)
+![](images/journey-trail.jpg)

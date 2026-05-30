@@ -210,4 +210,4 @@ That is the kind of project the LotS has always been. The test is not just for t
 
 **5. **I suggest: 'The test is not just for the data. It is for us.' What do you think this means? Is there a way in which engaging seriously with the LotS testing protocol — as a participant, a facilitator, or a researcher — is itself a formation practice? What might it require of you personally to participate honestly in this kind of research?
 
-![](images/image-001.jpeg)
+![](images/journey-trail.jpg)

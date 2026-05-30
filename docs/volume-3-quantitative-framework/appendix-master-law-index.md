@@ -184,5 +184,5 @@ Laws that articulate the quantitative-and-eschatological territory the Vol 3 fra
 
 Three companion documents — Heart Formation Theology (HFT), Soul and Spirit Taxonomies for Spiritual Formation (SST), and A Model of Spiritual Formation for Individuals and Small Groups (MSFIG) — run alongside this investigation and should be read with it. Those documents do not propose formal laws in the IJH format, but they map the formation-level experience of operating in these laws: what it looks like, from the inside, to move through the stages of trust, soul renewal, and spirit union that these laws describe. Cross-reference callout boxes throughout all three volumes point to the specific connections. The most important single connection: the Affective Taxonomy's five-stage progression (Receiving → Responding → Valuing → Organization → Characterization), applied to trust in scripture as the affective test case, is the most tractable current candidate for the Vol 3 measurement protocol — the operational definition of 'spiritual distance' that this volume proposes but does not yet supply.
 
-![](images/image-003.jpeg)
+![](images/journey-trail.jpg)
 

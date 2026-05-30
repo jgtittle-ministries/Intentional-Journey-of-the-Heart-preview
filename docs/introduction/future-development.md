@@ -17,4 +17,4 @@ In all this, I am inviting you into an intentional journey of the heart. A journ
 
 Please join me in this intentional journey. As C.S. Lewis said in “The Last Battle”, “Further up and further in.” I’ll meet you there.
 
-![](images/image-002.jpeg)
+![](images/journey-trail.jpg)

@@ -7,7 +7,7 @@ source: "IJH_Vol2_v5_6_1_1.docx"
 # Fourth Exploration: Confession and Restoration — Clearing the Sin Blockage
 
 
-![](images/image-013.jpeg)
+![](images/confession-light.jpg)
 
 ## Pairing with Vol 1 Foundational Law II
 I flagged this as an Open Trail in earlier drafts of Volume 1; the corpus has since formally added the Confession-Restoration Law as Foundational Law II (V1.FL.II — throughout this volume, V1.FL.N refers to the Nth of the Foundational Laws Vol 1 carries ahead of its Explorations). The Heart-Throne Law sits as V1.FL.III, the structural pair to V1.FL.II: confession (the territory of this Exploration) clears the sin act, while V1.FL.III dethrones the false god the sin was serving — the answer to the question of why some sins, faithfully confessed repeatedly, return. What V1.FL.II names at law-level — the channel-clearing mechanism vertically, between person and God — this Exploration extends into the diagnostic and tool-application register; it also pairs with the Sin Blockage Law named below as the same mechanism from the opposite side. It belongs here in Vol 2 as its own full exploration, because confession is the primary tool for the sin component of heart blockage — and sin blockage is the one type that does not respond to the other tools. TPM does not clear unconfessed sin. Grief Recovery does not clear unconfessed sin. Shadow work does not clear unconfessed sin. Only confession does.

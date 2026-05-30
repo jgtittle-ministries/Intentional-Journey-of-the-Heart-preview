@@ -7,7 +7,7 @@ source: "IJH_Vol2_v5_6_1_1.docx"
 # Second Exploration: Emotional Knots — The Energetic Blockage Law
 
 
-![](images/image-015.jpeg)
+![](images/image-015.jpeg){: .inset-left}
 
 ## Where This Discovery Came From
 Years ago, Carolyn and I were praying for a young woman who was presenting with physical symptoms. In the middle of that prayer time, the Lord showed me a picture: a large-diameter rope, knotted in her gut. That was unusual enough. But what made it diagnostic rather than just visual was what came next: I saw that she was pulling on both ends of that rope herself. She was the one keeping it tight. The knot was not just something that had happened to her — it was something she was actively maintaining, even though it was costing her enormous energy to do so. When I offered her this picture, she confirmed it and knew she had to work on releasing her hold on the rope/knot.
