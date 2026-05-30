@@ -59,7 +59,7 @@ My initial starting point is the observation that we live a life so far short of
 
 ## The Four Foundational Principles
 
-![](images/image-013.jpeg)
+
 
 As laid out in the Intro, this volume operates under four foundational axioms: (1) Laws of the Spirit exist; (2) they are knowable; (3) they are knowable in all three “worlds” — spirit, mind and emotions, body and actions; and (4) we can operate in them. The full statement is in the Intro; what follows in this volume builds on those four principles.
 

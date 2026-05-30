@@ -9,7 +9,9 @@ I am not writing systematic theology. I am writing down what I believe I have di
 
 Along the way, I will give you my confidence tier on each major claim. That is not false modesty. It is intellectual honesty about the fact that I am exploring terrain that has not been fully mapped, and I’d rather tell you a claim sits at the Reasonably Inferred tier than pretend it is settled when it isn’t. The early scientists who first discovered natural laws held them provisionally, too, and they were right to do so.
 
-![](images/image-003.jpeg)
+> I am living proof that uncertainty is vastly underrated and often times a blessing in disguise.
+>
+> — Tony Snowsill
 
 When I assign a confidence tier, I am counting independent lines of evidence (a claim with multiple scriptural texts approaching it from different angles, plus corroborating patterns in experience, plus conceptual coherence with adjacent claims, gets a higher tier than one resting on a single passage or single analogy), weighting the type of evidence (direct propositional statements in scripture outweigh structural inferences like “this cluster behaves like a gateway, therefore it is one,” which in turn outweigh analogical reasoning from physics), and flagging where my own interpretation is doing the work (good scriptural grounding for a claim does not mean my reading of the causal arrows is settled). The Sin Blockage law in Volume 2 — Clearly Taught, with explicit positive and negative scriptural statements, millennia of consistent tradition, and direct experiential confirmation — serves as the anchor against which everything else is calibrated.
 

@@ -7,7 +7,7 @@ source: "IJH_Vol2_v5_6_1_1.docx"
 # Fifth Exploration: The Four Connects — A Causal Sequence
 
 
-![](images/image-009.jpeg)
+![](images/four-connects-pieces.jpg)
 
 ## Not a Workshop Label — A Logical Architecture
 The Four Connects — Connecting with Self, Connecting with Others, Connecting with God, Connecting with Mission — came out of the Band of Brothers work I have been doing with men for many years. We used it as an organizing framework for workshops and small group sessions. What I want to do here is elevate it from an organizational label to what I now understand it actually is: a causal sequence with directional dependencies that matter. The four connects come from the two most important commandments as Jesus highlighted (Matt. 22:37-39).
@@ -16,7 +16,7 @@ The sequence is not arbitrary. I cannot genuinely connect with Others if I do no
 
 ## Connecting with Self
 
-![](images/image-004.png)
+![](images/self-reflection.jpg)
 
 The starting point is always honest self-observation. "How converted is my heart?" is the diagnostic question I keep returning to, because it refuses the religious short-circuit of treating profession as equivalent to transformation. The heart is the soil. The state of the soil determines what the Word can produce. And I have a hard time addressing a soil condition I have not accurately named.
 

@@ -7,7 +7,7 @@ source: "IJH_Vol1_v5_6_1_1.docx"
 # First Exploration: How to Get Faith
 
 
-![](images/image-007.jpeg)
+![](images/ear-listening.jpg)
 
 ## The Starting Point: Rom. 10:17
 This is where I started the explorations, and it is still the clearest single operational law I have found in scripture. Rom. 10:17 is a genuine if-then chain with a defined input, a defined output, and a specified mechanism connecting them.

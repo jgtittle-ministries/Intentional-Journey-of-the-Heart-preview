@@ -32,8 +32,6 @@ Before I dive in, let me acknowledge two debts that deserve fuller recognition t
 
 The first is to Dave Smith. Dave and I have walked through much of the experiential work described in this volume together. We have been a Band of Brothers for many years, using protocols derived from multiple sources and adapting what we could align faithfully with scripture. Dave has recently published a book documenting some of the processes we worked with: “Relational Discipleship: Transformation Through a Band of Brothers” (Dorrance Publishing). I recommend it without reservation to anyone who wants to follow the Band of Brothers trail more fully. His book is an important supplement to the discussion here.
 
-![](images/image-012.jpeg)
-
 Here is the link to the publisher of Dave’s book:
 
 I highly recommend getting to know this book and Dave.
